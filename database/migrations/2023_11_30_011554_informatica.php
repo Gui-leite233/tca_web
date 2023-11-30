@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Admnistrator extends Migration
+class Informatica extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class Admnistrator extends Migration
      */
     public function up()
     {
-        Schema::create('admnistrator', function (Blueprint $table) {
+        Schema::create('informatica', function (Blueprint $table) {
             $table->id();
-            $table->string('none');
-            $table->string('email')->unique();
-            $table->string('curso');
             
-            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class Admnistrator extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admnistrator');
+        Schema::dropIfExists('informatica');
     }
 }
