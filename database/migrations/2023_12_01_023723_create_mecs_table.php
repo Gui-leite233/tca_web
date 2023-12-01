@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Mamb extends Migration
+class CreateMecsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class Mamb extends Migration
      */
     public function up()
     {
-        Schema::create('mamb', function (Blueprint $table) {
+        Schema::create('mecs', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class Mamb extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mamb');
+        Schema::dropIfExists('mecs');
     }
 }
