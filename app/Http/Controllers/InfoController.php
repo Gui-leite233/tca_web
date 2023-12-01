@@ -13,7 +13,8 @@ class InfoController extends Controller
      */
     public function index()
     {
-        //
+        //$data = Info::orderBy('nome')->get();
+        return view('informatica.index', compact('data'));
     }
 
     /**
@@ -23,7 +24,7 @@ class InfoController extends Controller
      */
     public function create()
     {
-        //
+        return view('informatica.create');
     }
 
     /**

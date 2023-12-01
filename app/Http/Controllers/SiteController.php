@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Info;
+use App\Models\Mamb;
+use App\Models\Mec;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller {
