@@ -13,7 +13,8 @@ class CursoController extends Controller
      */
     public function index()
     {
-        //
+        $permissions = session('user_permissions');
+        return view('cursos.index', compact('permissions'));
     }
 
     /**
@@ -23,7 +24,7 @@ class CursoController extends Controller
      */
     public function create()
     {
-        //
+        return view('cursos.create');
     }
 
     /**
@@ -45,7 +46,7 @@ class CursoController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('cursos.show');
     }
 
     /**
@@ -56,7 +57,7 @@ class CursoController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('cursos.edit');
     }
 
     /**
@@ -79,6 +80,6 @@ class CursoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return view('cursos.destroy');
     }
 }

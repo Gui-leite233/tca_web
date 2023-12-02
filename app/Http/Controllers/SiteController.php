@@ -8,11 +8,11 @@ use Illuminate\Http\Request;
 class SiteController extends Controller {
     
     //exemplo do que fazer nessa controller:
-    /*public function getInfo() {
+    public function getCurso() {
 
-        $data = Info::orderBy('data')->get();
-        return view('site.info', compact('data'));
-    }*/
+        $data = Curso::orderBy('data')->get();
+        return view('site.curso', compact('data'));
+    }
 
     
 

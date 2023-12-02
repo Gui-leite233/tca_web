@@ -18,9 +18,12 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
+Route::resource('/cursos', '\App\Http\Controllers\CursoController')
+->middleware(['auth']);
+
 //como definir a rota:
-//Route::resource('info', 'InfoController');
-/*Route::prefix('/site')->group(function() {
-    Route::get('/info', 'SiteController@getInfo')->name('site.info');
+Route::resource('curso', 'CursoController');
+Route::prefix('/site')->group(function() {
+    Route::get('/curso', 'SiteController@getCurso')->name('site.curso');
     
-});*/
+});
