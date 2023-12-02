@@ -23,7 +23,7 @@ class RegisteredUserController extends Controller
     public function create()
     {
         $roles = Role::orderBy('name')->get();
-        return view('auth.register', compact('roles'));
+        return view('auth.register', compact('types'));
     }
 
     /**
@@ -39,12 +39,14 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'curso' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'type_id' => $request->type_id,
             'password' => Hash::make($request->password),
             'role_id' => $request->role,
         ]);
