@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::resource('/cursos', '\App\Http\Controllers\CursoController')
+Route::resource('/cursos', '\App\Http\Controllers\CursoController') 
 ->middleware(['auth']);
 
 //como definir a rota:
