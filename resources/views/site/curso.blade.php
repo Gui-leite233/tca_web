@@ -1,4 +1,4 @@
-@extends('template.main', ['menu' => "home", "submenu" => "Cursos"])
+@extends('templates.main', ['menu' => "home", "submenu" => "curso"])
 
 @section('titulo') Desenvolvimento Web @endsection
 
@@ -12,6 +12,12 @@
                     <h2 class="accordion-header" id="flush-headingOne">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush_{{$item->id}}" aria-expanded="false" aria-controls="flush-collapseOne">
                             <span class="text-success fs-5">{{ $item->nome }}</span>
+                        </button>
+                    </h2>
+
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush_{{$item->id}}" aria-expanded="false" aria-controls="flush-collapseOne">
+                            <span class="text-success fs-5">{{ $item->email }}</span>
                         </button>
                     </h2>
                     

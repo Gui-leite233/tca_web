@@ -1,4 +1,4 @@
-@extends('template.main', ['menu' => "Projeto Multidisciplinar: ", "submenu" => "Principal"])
+@extends('templates.main', ['menu' => "Projeto cursos: ", "submenu" => "Principal"])
 
 @section('titulo') Desenvolvimento Web @endsection
 

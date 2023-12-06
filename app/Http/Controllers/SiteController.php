@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 //importar a model da classe:
 //use App\Models\Info;
 use Illuminate\Http\Request;
+use App\Models\Curso;
 
 class SiteController extends Controller {
     

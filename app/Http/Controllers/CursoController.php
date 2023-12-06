@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Curso;
 
 class CursoController extends Controller
 {
@@ -13,8 +14,10 @@ class CursoController extends Controller
      */
     public function index()
     {
-        $permissions = session('user_permissions');
-        return view('cursos.index', compact('permissions'));
+        $curso = Curso::all();
+        //$permissions = session('user_permissions');
+        //, compact('permissions') - colocar essa linha de código depois de 'curso.index'
+        return view('curso.index', compact('curso')); 
     }
 
     /**
@@ -24,7 +27,7 @@ class CursoController extends Controller
      */
     public function create()
     {
-        return view('cursos.create');
+        return view('curso.create');
     }
 
     /**
@@ -35,7 +38,13 @@ class CursoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $obj = new Curso();
+        $obj->nome = mb_strtoupper($request->nome, 'UTF-8');
+        $obj->email = mb_strtoupper($request->email, 'UTF-8');
+        $obj->descricao = mb_strtoupper($request->descricao, 'UTF-8');
+        $obj->save();
+
+        return redirect()->route('curso.index');
     }
 
     /**
@@ -46,7 +55,7 @@ class CursoController extends Controller
      */
     public function show($id)
     {
-        return view('cursos.show');
+        return view('curso.show');
     }
 
     /**
@@ -57,7 +66,7 @@ class CursoController extends Controller
      */
     public function edit($id)
     {
-        return view('cursos.edit');
+        return view('curso.edit');
     }
 
     /**
@@ -80,6 +89,6 @@ class CursoController extends Controller
      */
     public function destroy($id)
     {
-        return view('cursos.destroy');
+        return view('curso.destroy');
     }
 }
