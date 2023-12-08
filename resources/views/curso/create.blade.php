@@ -45,37 +45,27 @@
     </div>
     <div class="col" >
             <div class="form-floating mb-3">
-                <input 
+                <!--<input 
                     type="text" 
-                    class="form-control @if($errors->has('descricao')) is-invalid @endif" 
-                    name="descricao" 
-                    placeholder="descricao"
-                    value="{{old('descricao')}}"
-                />
-                <label for="descricao">Descrição do curso</label>
-                @if($errors->has('descricao'))
+                    class="form-control @if($errors->has('duracao')) is-invalid @endif" 
+                    name="duracao"  
+                    placeholder="duracao"
+                    value="{{old('duracao')}}"
+                /> -->
+                <h4>Duração</h4>
+                <select id="duracao" name="duracao">
+                    <option value="1" selected>1 ano</option>
+                    <option value="2">2 anos</option>
+                    <option value="3">3 anos</option>
+                    <option value="4">4 anos</option>
+                </select>
+                <input type="submit">
+                <!-- <label for="duracao">Duração do curso</label>
+                @if($errors->has('duracao'))
                     <div class='invalid-feedback'>
-                        {{ $errors->first('descricao') }}
+                        {{ $errors->first('duracao') }}
                     </div>
-                @endif
-            </div>
-        </div>
-    </div>
-    <div class="col" >
-            <div class="form-floating mb-3">
-                <input 
-                    type="text" 
-                    class="form-control @if($errors->has('email')) is-invalid @endif" 
-                    name="email" 
-                    placeholder="Email"
-                    value="{{old('email')}}"
-                />
-                <label for="email">Email do curso</label>
-                @if($errors->has('email'))
-                    <div class='invalid-feedback'>
-                        {{ $errors->first('email') }}
-                    </div>
-                @endif
+                @endif -->
             </div>
         </div>
     </div>

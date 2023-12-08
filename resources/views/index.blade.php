@@ -7,7 +7,7 @@
     <div class="col">
         <div class="card text-center border-success card-bg-success">
             <div class="card-header text-white" style="background-color: #198754;">
-              Informática
+              Infomática
             </div>
             <div class="card-body">
                 <a href="{{route('site.curso')}}" class="dropdown-item">
