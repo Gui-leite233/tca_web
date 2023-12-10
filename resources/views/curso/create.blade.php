@@ -54,12 +54,11 @@
                 /> -->
                 <h4>Duração</h4>
                 <select id="duracao" name="duracao">
-                    <option value="1" selected>1 ano</option>
-                    <option value="2">2 anos</option>
-                    <option value="3">3 anos</option>
-                    <option value="4">4 anos</option>
+                    <option value="1 ano" selected>1 ano</option>
+                    <option value="2 anos">2 anos</option>
+                    <option value="3 anos">3 anos</option>
+                    <option value="4 anos">4 anos</option>
                 </select>
-                <input type="submit">
                 <!-- <label for="duracao">Duração do curso</label>
                 @if($errors->has('duracao'))
                     <div class='invalid-feedback'>

@@ -7,7 +7,7 @@
 <div class="row mb-3">
     <div class="col">
         <div class="accordion accordion-flush" id="accordionFlushExample">
-            @foreach ($data as $item)
+            @foreach ($created_at as $item)
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingOne">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush_{{$item->id}}" aria-expanded="false" aria-controls="flush-collapseOne">

@@ -11,10 +11,8 @@ class SiteController extends Controller {
     //exemplo do que fazer nessa controller:
     public function getCurso() {
 
-        $data = Curso::orderBy('data')->get();
-        return view('site.curso', compact('data'));
+        $created_at = Curso::orderBy('created_at')->get();
+        return view('site.curso', compact('created_at'));
     }
-
-    
 
 }

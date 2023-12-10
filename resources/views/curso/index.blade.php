@@ -11,16 +11,16 @@
                 <thead>
                 <tr>
                     <th scope="col">Nome</th>
-                    <th scope="col">Email</th>
                     <th scope="col">Descrição</th>
+                    <th scope="col">Duração</th>
                 </tr>
                 </thead>
                 <tbody>
                     @foreach ($curso as $item)
                         <tr>
                             <td>{{ $item->nome }}</td>
-                            <td>{{ $item->email }}</td>
                             <td>{{ $item->descricao }}</td>
+                            <td>{{ $item->duracao}}</td>
                             <td>
                                 @can('update', $item)
                                     <a href= "{{ route('curso.edit', $item) }}" class="btn btn-success">

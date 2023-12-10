@@ -40,8 +40,8 @@ class CursoController extends Controller
     {
         $obj = new Curso();
         $obj->nome = mb_strtoupper($request->nome, 'UTF-8');
-        $obj->email = mb_strtoupper($request->email, 'UTF-8');
-        $obj->descricao = mb_strtoupper($request->descricao, 'UTF-8');
+        $obj->descricao = mb_strtoupper($request->email, 'UTF-8');
+        $obj->duracao = mb_strtoupper($request->duracao, 'UTF-8');
         $obj->save();
 
         return redirect()->route('curso.index');
