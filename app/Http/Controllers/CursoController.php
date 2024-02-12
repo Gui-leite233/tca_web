@@ -27,6 +27,7 @@ class CursoController extends Controller
      */
     public function create()
     {
+        $curso = Curso::all();
         return view('curso.create');
     }
 
@@ -61,8 +62,8 @@ class CursoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  int  $id 
+     * @return \Illuminate\View\View
      */
     public function edit($id)
     {
@@ -74,11 +75,21 @@ class CursoController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response  // You can document that it can return subclasses of Response
      */
     public function update(Request $request, $id)
     {
-        //
+        $curso = Curso::find($id);
+        if (!$curso) {
+            return redirect()->route('curso.index')->with('error', 'Curso não encontrado.');
+        }
+
+        $curso->nome = mb_strtoupper($request->nome, 'UTF-8');
+        $curso->descricao = mb_strtoupper($request->descricao, 'UTF-8');
+        $curso->duracao = mb_strtoupper($request->duracao, 'UTF-8');
+        $curso->save();
+
+        return redirect()->route('curso.index')->with('success', 'Curso atualizado com sucesso.');
     }
 
     /**
