@@ -15,8 +15,11 @@ class CreateProfessorsTable extends Migration
     {
         Schema::create('professors', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->foreignId('curso_id')->constrained('cursos');
             $table->timestamps();
         });
+        
     }
 
     /**
