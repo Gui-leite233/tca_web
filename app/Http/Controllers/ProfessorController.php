@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Professor;
 
 class ProfessorController extends Controller
 {
@@ -13,7 +14,10 @@ class ProfessorController extends Controller
      */
     public function index()
     {
-        //
+        $professor = Professor::all();
+        //$permissions = session('user_permissions');
+        //, compact('permissions') - colocar essa linha de código depois de 'professor.index'
+        return view('professor.index', compact('professor')); 
     }
 
     /**
@@ -23,7 +27,8 @@ class ProfessorController extends Controller
      */
     public function create()
     {
-        //
+        $professor = Professor::all();
+        return view('professor.create');
     }
 
     /**
